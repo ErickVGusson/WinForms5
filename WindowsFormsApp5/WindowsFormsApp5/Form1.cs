@@ -20,6 +20,7 @@ namespace WindowsFormsApp5
         }
 
         String caminhoDoArquivo = "C:/Users/erick.vgusson/source/repos/WinForms5/WindowsFormsApp5/WindowsFormsApp5/Arquivos/dados.txt";
+      
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -106,6 +107,8 @@ namespace WindowsFormsApp5
 
             string texto = LerArquivo(caminhoDoArquivo);
 
+            int selecionado = 0;
+
             Array lista = texto.Split('\n');
 
             foreach (string pessoa in lista)
@@ -113,15 +116,45 @@ namespace WindowsFormsApp5
 
                 string[] dados = pessoa.Split('|');
 
-                cbxNome.Items.Add(dados[0].ToUpper());
+                if (selecionado == cbxNome.SelectedIndex)
+                {
+                    lblNome.Text = dados[0];
+                    lblTelefone.Text = dados[1];
+                    lblEmail.Text = dados[2];
+                }
 
-                lblNome.Text = dados[0];
-                lblTelefone.Text = dados[1];
-                lblEmail.Text = dados[2];
+                selecionado++;
 
             }
 
         }
 
+        private void cbxNome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string texto = LerArquivo(caminhoDoArquivo);
+
+            int selecionado = cbxNome.SelectedIndex;
+            int contador = 0;
+
+            Array lista = texto.Split('\n');
+
+            foreach (string pessoa in lista)
+            {
+
+                string[] dados = pessoa.Split('|');
+
+                if (contador == selecionado)
+                {
+                    lblNome.Text = dados[0];
+                    lblTelefone.Text = dados[1];
+                    lblEmail.Text = dados[2];
+                }
+
+                contador++;
+
+            }
+
+        }
     }
 }

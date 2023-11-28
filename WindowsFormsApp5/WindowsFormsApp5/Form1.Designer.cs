@@ -58,24 +58,26 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Location = new System.Drawing.Point(12, 336);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(89, 38);
             this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLer
             // 
+            this.btnLer.BackColor = System.Drawing.Color.Salmon;
             this.btnLer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLer.Location = new System.Drawing.Point(108, 336);
             this.btnLer.Name = "btnLer";
             this.btnLer.Size = new System.Drawing.Size(91, 38);
             this.btnLer.TabIndex = 5;
             this.btnLer.Text = "Ler";
-            this.btnLer.UseVisualStyleBackColor = true;
+            this.btnLer.UseVisualStyleBackColor = false;
             this.btnLer.Click += new System.EventHandler(this.btnLer_Click);
             // 
             // label1
@@ -153,6 +155,7 @@
             this.cbxNome.Name = "cbxNome";
             this.cbxNome.Size = new System.Drawing.Size(121, 28);
             this.cbxNome.TabIndex = 12;
+            this.cbxNome.SelectedIndexChanged += new System.EventHandler(this.cbxNome_SelectedIndexChanged);
             // 
             // label4
             // 
